@@ -1,0 +1,120 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/Mobile%20Friendly%20Orion')))()
+
+local Window = OrionLib:MakeWindow({Name = "Budgie Hub | Creator Hub 1.0", HidePremium = true, IntroEnabled = false, SaveConfig = false, ConfigFolder = "OrionTest"})
+
+local Tab = Window:MakeTab({
+	Name = "Debuggers",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+ Name = "Hydroxide",
+ Callback = function()
+local owner = "Hosvile"
+local branch = "revision"
+
+local function webImport(file)
+    return loadstring(game:HttpGetAsync(("https://raw.githubusercontent.com/%s/MC-Hydroxide/%s/%s.lua"):format(owner, branch, file)), file .. '.lua')()
+end
+
+webImport("init")
+webImport("ui/main")
+   end    
+})
+
+Tab:AddButton({
+ Name = "Remote spy",
+ Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/infyiff/backup/main/SimpleSpyV3/main.lua"))()
+   end    
+})
+
+Tab:AddButton({
+ Name = "FireServer/ReplicationStorage Spy",
+ Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/yofriendfromschool1/Sky-Hub-Backup/main/gameremotefireserver.lua"))()
+   end    
+})
+
+Tab:AddButton({
+ Name = "InvokeServer Spy",
+ Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/yofriendfromschool1/Sky-Hub-Backup/main/gameinvokeserver.lua"))()
+   end    
+})
+
+Tab:AddButton({
+ Name = "InvokeClient Spy",
+ Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/yofriendfromschool1/Sky-Hub-Backup/main/gameremoteinvokeclient.lua"))()
+   end    
+})
+
+Tab:AddButton({
+ Name = "Http Spy",
+ Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/yofriendfromschool1/Httpspy/main/httpspy.txt"))()
+   end    
+})
+
+local Tab = Window:MakeTab({
+	Name = "Bypass",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+ Name = "Adonis bypass",
+ Callback = function()
+        for k,v in pairs(getgc(true)) do if pcall(function() return rawget(v,"indexInstance") end) and type(rawget(v,"indexInstance")) == "table" and (rawget(v,"indexInstance"))[1] == "kick" then v.tvk = {"kick",function() return game.Workspace:WaitForChild("") end} end end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Client Anti Kick",
+ Callback = function()
+        local plr = game:GetService("Players").LocalPlayer; getgenv().Anti = true; local mt = getrawmetatable(game); local oldNamecall = mt.__namecall; setreadonly(mt, false); mt.__namecall = newcclosure(function(self, ...) if self == plr then local namecallmethod = getnamecallmethod(); if namecallmethod:lower() == "kick" and getgenv().Anti then return warn("[ANTI-KICK] Client Tried To Call Kick Function On LocalPlayer") end elseif self ~= plr then local namecallmethod = getnamecallmethod(); if namecallmethod:lower() == "kick" then return nil end end return oldNamecall(self, ...) end); setreadonly(mt, true)
+   end    
+})
+
+Tab:AddButton({
+ Name = "Chat bypass",
+ Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Clickgameplay/no-tag-script/main/.NoTagScript"))()
+   end    
+})
+
+local Tab = Window:MakeTab({
+	Name = "Useful Sites",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+ Name = "Link Bypass",
+ Callback = function()
+        setclipboard("https://bypass.city")
+   end    
+})
+
+Tab:AddButton({
+ Name = "Key Bypass",
+ Callback = function()
+        setclipboard("Telegram: @ArxBypass_bot")
+   end    
+})
+
+Tab:AddButton({
+ Name = "Code Obfuscator",
+ Callback = function()
+        setclipboard("http://luaobfuscator.epizy.com")
+   end    
+})
+
+Tab:AddButton({
+ Name = "Link Obfuscator",
+ Callback = function()
+        setclipboard("https://glot.io/snippets/fz3f15yo3g")
+   end    
+})
