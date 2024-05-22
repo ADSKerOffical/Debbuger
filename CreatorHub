@@ -52,9 +52,39 @@ Tab:AddButton({
 })
 
 Tab:AddButton({
+ Name = "Turtle Spy",
+ Callback = function()
+        loadstring(game:HttpGet("https://pastebin.com/raw/BDhSQqUU", true))()
+   end    
+})
+
+Tab:AddButton({
+ Name = "Show ReplicatedStorage",
+ Callback = function()
+        local function findRemoteEvents(instance)
+    for _, child in ipairs(instance:GetChildren()) do
+        if child:IsA("RemoteEvent") then
+            print(child:GetFullName())
+        end
+        findRemoteEvents(child)
+    end
+end
+
+findRemoteEvents(game.ReplicatedStorage)
+   end    
+})
+
+Tab:AddButton({
  Name = "Http Spy",
  Callback = function()
         loadstring(game:HttpGet("https://raw.githubusercontent.com/yofriendfromschool1/Httpspy/main/httpspy.txt"))()
+   end    
+})
+
+Tab:AddButton({
+ Name = "HttpSpy v2",
+ Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/ADSKerOffical/HttpSpy/main/NotMine"))()
    end    
 })
 
