@@ -527,3 +527,59 @@ Tab:AddButton({
         setclipboard("https://glot.io/snippets/fz3f15yo3g")
    end    
 })
+
+local Tab = Window:MakeTab({
+	Name = "Facts",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddParagraph("HTML support Roblox","Many people don’t know, but Roblox supports HTML, but partially. Only used in ScreenGui and the like")
+Tab:AddLabel("Here is an example script for HTML:")
+
+Tab:AddDropdown({
+	Name = "Open dropdown",
+	Default = "1",
+	Options = {"<b><font size='50'>Close dropdown</font></b>"},
+	Callback = function(Value)
+		print(Value)
+	end    
+})
+
+local Tab = Window:MakeTab({
+	Name = "Terms",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddParagraph("UNC","UNC – Universal Naming Convention. It is a way of specifying the location of files and resources on a server or network. Simply put, this is testing the ability of an exploit or injector to work")
+Tab:AddParagraph("LuaU","Lua Universal")
+Tab:AddParagraph("LuaC","Lua script compilation process")
+Tab:AddParagraph("API","API – Application Programming Interface. Refers to a set of rules and protocols that define how different software components should interact with each other")
+Tab:AddParagraph("Navmesh","Navigation system for NPC movement control")
+Tab:AddParagraph("Instance Folders","This is a special storage that allows you to organize and group Instance objects in the game space")
+Tab:AddParagraph("Memory store","Memory store – a service that allows you to store and use data in server memory")
+Tab:AddParagraph("Debris","DebrisService – a service that manages and removes objects that are no longer needed in the game space")
+Tab:AddParagraph("Skid","Skid(Script Kiddie) – a very bad status for a scripter. This term is used if a cheater plagiarizes scripts")
+Tab:AddParagraph("Memoization","Technique for caching calculation results to speed up work")
+Tab:AddParagraph("Delta time","Time between two consecutive frames")
+Tab:AddParagraph("AppDelegate","Object responsible for managing the application life cycle")
+Tab:AddParagraph("Callback","Functions called in response to certain events or situations")
+Tab:AddParagraph("Tick","A tick is a unit of time in Roblox, similar to a frame in other engines. This is the time that has passed since the last update of the game world. You can use script.Changed or RunService.Stepped events to access ticks")
+Tab:AddParagraph("UTC","UTC – (Universal Coordinated Time) is the current time in Roblox, similar to 'real-world time'. You can use the Workspace.DistributedGameTime property to get the current UTC time")
+Tab:AddParagraph("FE","Filtering Enabled is a Roblox server security mode that checks and filters all information transmitted between the client and the server")
+Tab:AddParagraph("Refactoring","The process of improving the structure of code without changing its external behavior")
+Tab:AddParagraph("Maid","Pattern for managing objects and clearing them in memory")
+Tab:AddParagraph("LuaULinting","Static analysis of LuaU code to detect potential problems")
+Tab:AddParagraph("Rojo","System for assembling and publishing Roblox projects")
+Tab:AddParagraph("LayerCollector","Component for creating layer overlay effects in the game interface")
+Tab:AddParagraph("Metrics","A tool for collecting and analyzing statistical data about gameplay")
+Tab:AddParagraph("Stud","Stud – basic unit of measurement for objects")
+Tab:AddParagraph("Yield","Yield – pause script execution until a certain event occurs")
+Tab:AddParagraph("Elapsedtime","Elapsedtime - time elapsed since the game started")
+Tab:AddParagraph("Rendering Pipeline","Rendering Pipeline - a system for visual processing and rendering of the game world")
+Tab:AddParagraph("CSG","CSG (Constructive Solid Geometry) - A system for constructing complex objects from primitive Part blocks")
+Tab:AddParagraph("Serialization","Serialization - The process of converting data into a format suitable for transmission over a networ")
+Tab:AddParagraph("Interpolation","Interpolation - An algorithm for smoothing the movement of objects to reduce visible 'jerking' due to delays")
+Tab:AddParagraph("RPCs","RPCs (Remote Procedure Calls) - A mechanism for calling functions on a remote server from a client")
+Tab:AddParagraph("JSON","JSON (JavaScript Object Notation) is one of the main formats for storing and transmitting data")
