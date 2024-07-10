@@ -375,8 +375,7 @@ local function getCurrentItemInHand()
     if player.Character then
         for _, item in pairs(player.Character:GetChildren()) do
             if item:IsA("Tool") then
-                return item.Name
-                setclipboard(item.Name)
+                return setclipboard(item.Name)
             end
         end
     end
