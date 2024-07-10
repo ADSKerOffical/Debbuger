@@ -295,6 +295,198 @@ Tab:AddButton({
 })
 
 local Tab = Window:MakeTab({
+	Name = "Finders",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+ Name = "Find Current Animation",
+ Callback = function()
+        local player = game:GetService("Players").LocalPlayer
+local character = player.Character
+local humanoid = character:FindFirstChildOfClass("Humanoid")
+if humanoid then
+  local animator = humanoid:FindFirstChildOfClass("Animator")
+  if animator then
+    local playingAnimation = animator:GetPlayingAnimationTracks()[1].Animation
+    if playingAnimation then
+      print(playingAnimation.AnimationId)
+      setclipboard(playingAnimation.AnimationId)
+    else
+      print("Animation doesn't play")
+    end
+  else
+    print("Animation not found")
+  end
+else
+  print("Player not found") 
+end
+
+Spooky = Instance.new("Sound", game.Workspace)
+Spooky.Name = "Spooky"
+Spooky.SoundId = "rbxassetid://3398620867"
+Spooky.Volume = 1
+Spooky.PlaybackSpeed = 2
+Spooky.Looped = fasle
+Spooky:Play()
+
+OrionLib:MakeNotification({
+	Name = "Budgie Hub",
+	Content = "Information has been sent to the console",
+	Image = "rbxassetid://16505492881",
+	Time = 5
+})
+   end    
+})
+
+Tab:AddButton({
+ Name = "Find Animations in Workspace",
+ Callback = function()
+        local animations = workspace:GetDescendants()
+for i,v in pairs(animations) do
+  if v:IsA("Animation") then
+    print(v.AnimationId)
+  end
+end
+
+Spooky = Instance.new("Sound", game.Workspace)
+Spooky.Name = "Spooky"
+Spooky.SoundId = "rbxassetid://3398620867"
+Spooky.Volume = 1
+Spooky.PlaybackSpeed = 2
+Spooky.Looped = fasle
+Spooky:Play()
+
+OrionLib:MakeNotification({
+	Name = "Budgie Hub",
+	Content = "Information has been sent to the console",
+	Image = "rbxassetid://16505492881",
+	Time = 5
+})
+   end    
+})
+
+Tab:AddButton({
+ Name = "Find Equipped Tool Nane",
+ Callback = function()
+        local player = game.Players.LocalPlayer
+local function getCurrentItemInHand()
+    if player.Character then
+        for _, item in pairs(player.Character:GetChildren()) do
+            if item:IsA("Tool") then
+                return item.Name
+                setclipboard(item.Name)
+            end
+        end
+    end
+    return "No item in hand"
+end
+
+print(getCurrentItemInHand())
+
+wait()
+
+Spooky = Instance.new("Sound", game.Workspace)
+Spooky.Name = "Spooky"
+Spooky.SoundId = "rbxassetid://3398620867"
+Spooky.Volume = 1
+Spooky.PlaybackSpeed = 2
+Spooky.Looped = fasle
+Spooky:Play()
+
+OrionLib:MakeNotification({
+	Name = "Budgie Hub",
+	Content = "Information has been sent to the console",
+	Image = "rbxassetid://16505492881",
+	Time = 5
+})
+   end    
+})
+
+Tab:AddButton({
+ Name = "Find Place Id",
+ Callback = function()
+        local placeId = game.PlaceId
+
+print("place ID: ".. placeId .."")
+setclipboard(placeId)
+
+Spooky = Instance.new("Sound", game.Workspace)
+Spooky.Name = "Spooky"
+Spooky.SoundId = "rbxassetid://3398620867"
+Spooky.Volume = 1
+Spooky.PlaybackSpeed = 2
+Spooky.Looped = fasle
+Spooky:Play()
+
+OrionLib:MakeNotification({
+	Name = "Budgie Hub",
+	Content = "Information has been sent to the console",
+	Image = "rbxassetid://16505492881",
+	Time = 5
+})
+   end    
+})
+
+Tab:AddButton({
+ Name = "Modules Finder",
+ Callback = function()
+local objects = game.Workspace:GetDescendants()
+
+local function isScript(obj)
+    return obj:IsA("LuaSourceContainer") or obj:IsA("ModuleScript")
+end
+
+for _, obj in ipairs(objects) do
+    if isScript(obj) then
+        print(obj:GetFullName())
+    end
+end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Find StateType",
+ Callback = function()
+        local player = game.Players.LocalPlayer
+local humanoid = player.Character.Humanoid
+print(humanoid:GetState())
+setclipboard(humanoid:GetState())
+   end    
+})
+
+Tab:AddButton({
+ Name = "Find All Decals Id",
+ Callback = function()
+        local function processDecals(parent)
+    for _, instance in pairs(parent:GetChildren()) do
+        if instance:IsA("Decal") then
+            print("Decal Texture ID:", instance.Texture)
+        end
+        processDecals(instance)
+    end
+end
+
+processDecals(workspace)
+   end    
+})
+
+Tab:AddButton({
+ Name = "Find All Instances",
+ Callback = function()
+        local function logAllInstances(parent)
+    for _, instance in pairs(parent:GetChildren()) do
+        print("Instance Created:", instance.ClassName, "- Name:", instance.Name)
+        logAllInstances(instance)
+    end
+end
+
+logAllInstances(workspace)
+   end    
+})
+
+local Tab = Window:MakeTab({
 	Name = "Bypass",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
