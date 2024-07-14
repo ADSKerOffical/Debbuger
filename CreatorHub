@@ -294,6 +294,37 @@ Tab:AddButton({
    end    
 })
 
+Tab:AddButton({
+ Name = "Animation Logger",
+ Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/ADSKerOffical/Animation-Logger/main/Gui"))()
+   end    
+})
+
+Tab:AddButton({
+ Name = "Error Recognizer",
+ Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/ADSKerOffical/Recognizer/main/Error"))()
+   end    
+})
+
+Tab:AddButton({
+ Name = "Cooldown Bypass",
+ Callback = function()
+        local old
+
+old = hookfunction(wait, newcclosure(function(...)
+   return old()
+end))
+
+local balls
+
+balls = hookfunction(task.wait, newcclosure(function(...)
+   return balls()
+end))
+   end    
+})
+
 local Tab = Window:MakeTab({
 	Name = "Finders",
 	Icon = "rbxassetid://4483345998",
@@ -751,6 +782,24 @@ local dfo = {
  "\\b – Removing a symbol back"
 }
 Tab:AddParagraph("Table special symbols: ", table.concat(dfo, "\n"))
+
+local Tab = Window:MakeTab({
+	Name = "Setclipboard",
+	Icon = "rbxassetid://4483345998",
+	PremiumOnly = false
+})
+
+Tab:AddButton({
+ Name = "Best way to remove object",
+ Callback = function()
+ fgg = [[
+ game.Debris:AddItem(a, b)
+ -- a – object name
+ -- b – After how many seconds will the object be removed?
+ ]]
+        setclipboard(fgg)
+   end    
+})
 
 local Tab = Window:MakeTab({
 	Name = "Terms",
