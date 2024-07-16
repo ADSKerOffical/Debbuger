@@ -619,7 +619,7 @@ Tab:AddButton({
 })
 
 Tab:AddButton({
- Name = "Client Anti Kick",
+ Name = "Anti Kick",
  Callback = function()
         local plr = game:GetService("Players").LocalPlayer; getgenv().Anti = true; local mt = getrawmetatable(game); local oldNamecall = mt.__namecall; setreadonly(mt, false); mt.__namecall = newcclosure(function(self, ...) if self == plr then local namecallmethod = getnamecallmethod(); if namecallmethod:lower() == "kick" and getgenv().Anti then return warn("[ANTI-KICK] Client Tried To Call Kick Function On LocalPlayer") end elseif self ~= plr then local namecallmethod = getnamecallmethod(); if namecallmethod:lower() == "kick" then return nil end end return oldNamecall(self, ...) end); setreadonly(mt, true)
    end    
@@ -627,20 +627,6 @@ Tab:AddButton({
 
 Tab:AddButton({
  Name = "Anti kick v2",
- Callback = function()
-        loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-anti-cheat-bypass-strong-12459"))()
-   end    
-})
-
-Tab:AddButton({
- Name = "Anti kick v3",
- Callback = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Bjkefe2/Crimson-CraftWars/main/Crimson"))()
-   end    
-})
-
-Tab:AddButton({
- Name = "Powerful Anti kick",
  Callback = function()
         xpcall(function() OldNameCall = hookmetamethod(game.Players.LocalPlayer, "__namecall", function(Self, ...) local Args = {...} local NamecallMethod = getnamecallmethod() if Self == game.Players.LocalPlayer and NamecallMethod == "Kick" then return nil end return OldNameCall(Self, ...) end) print("Anti Kick Enabled.") end, function(e) print(e) end)
    end    
@@ -759,42 +745,9 @@ Tab:AddButton({
 })
 
 Tab:AddButton({
- Name = "Rayfled key bypass",
- Callback = function()
-        local load
-load = hookfunc(loadstring, function(script, ...)
-	return load(script:gsub("if Settings.KeySystem then", "if 1==2 then"), ...)
-end)
-   end    
-})
-
-Tab:AddButton({
- Name = "logs",
- Callback = function()
-        loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-logs-5726"))()
-   end    
-})
-
-Tab:AddButton({
  Name = "Tp place bypass",
  Callback = function()
         loadstring(game:HttpGet("https://rawscripts.net/raw/Universal-Script-Client-Anti-Place-TP-7430"))()
-   end    
-})
-
-Tab:AddButton({
- Name = "32 bit bypass",
- Callback = function()
-        local X;
-X = hookmetamethod(game, "__namecall",function(self,...)
-local args = {...};
-local method = getnamecallmethod()
-if method == "Kick"   then
-
-return
-end
-return X(self,...)
-end)
    end    
 })
 
