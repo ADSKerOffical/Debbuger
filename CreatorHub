@@ -793,57 +793,6 @@ Tab:AddButton({
 })
 
 local Tab = Window:MakeTab({
-	Name = "Facts",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-
-Tab:AddParagraph("HTML support Roblox","Many people don’t know, but Roblox supports HTML, but partially. Only used in ScreenGui and the like")
-Tab:AddLabel("Here is an example script for HTML:")
-
-Tab:AddDropdown({
-	Name = "Open dropdown",
-	Default = "1",
-	Options = {"<b><font size='50'>Close dropdown</font></b>"},
-	Callback = function(Value)
-		print(Value)
-	end    
-})
-
-Tab:AddLabel("Roblox support some fonts:")
-Tab:AddLabel("<i><font size='10'>Font (i)</font></i>\n<u><font size='10'>Font (u)</font></u>\n<s><font size='10'>Font (s)</font></s>")
-Tab:AddLabel("You can also make colored text:")
-Tab:AddLabel("<p><font size='15' color='#00FF00'>This text is green</font></p>")
-
-local dfo = {
- "\\n – go to new line",
- "\\u – addition Unicode symbols",
- "\\t – tabulation",
- "\\r – carriage return",
- "\\f – go to new page",
- "\\b – Removing a symbol back"
-}
-Tab:AddParagraph("Table special symbols: ", table.concat(dfo, "\n"))
-
-local Tab = Window:MakeTab({
-	Name = "Setclipboard",
-	Icon = "rbxassetid://4483345998",
-	PremiumOnly = false
-})
-
-Tab:AddButton({
- Name = "Best way to remove object",
- Callback = function()
- fgg = [[
- game.Debris:AddItem(a, b)
- -- a – object name
- -- b – After how many seconds will the object be removed?
- ]]
-        setclipboard(fgg)
-   end    
-})
-
-local Tab = Window:MakeTab({
 	Name = "Terms",
 	Icon = "rbxassetid://4483345998",
 	PremiumOnly = false
