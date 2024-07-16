@@ -1,6 +1,6 @@
 local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/Mobile%20Friendly%20Orion')))()
 
-local Window = OrionLib:MakeWindow({Name = "Budgie Hub | Creator Hub 1.0", HidePremium = true, IntroEnabled = false, SaveConfig = false, ConfigFolder = "OrionTest"})
+local Window = OrionLib:MakeWindow({Name = "Budgie Hub | Creator Hub", HidePremium = true, IntroEnabled = false, SaveConfig = false, ConfigFolder = "OrionTest"})
 
 local Tab = Window:MakeTab({
 	Name = "Debuggers",
@@ -829,3 +829,10 @@ Tab:AddParagraph("Serialization","Serialization - The process of converting data
 Tab:AddParagraph("Interpolation","Interpolation - An algorithm for smoothing the movement of objects to reduce visible 'jerking' due to delays")
 Tab:AddParagraph("RPCs","RPCs (Remote Procedure Calls) - A mechanism for calling functions on a remote server from a client")
 Tab:AddParagraph("JSON","JSON (JavaScript Object Notation) is one of the main formats for storing and transmitting data")
+Tab:AddParagraph("CDN","Content Delivery Network –Distributed network of servers for fast delivery of game resources")
+Tab:AddParagraph("Delta Compression","Differential data compression algorithm to optimize network traffic")
+Tab:AddParagraph("XML","Providing structured and standardized storage and presentation of game and system data")
+Tab:AddParagraph("LuaJIT","A special compiler for the Lua programming language, which is used in Roblox to speed up the execution of scripts")
+Tab:AddParagraph("IK","Inverse Kinematics – A special technology that allows you to animate a character by specifying only the final positions of the limbs")
+Tab:AddParagraph("LOD","Level of Detail – Technology that allows you to optimize the rendering of objects, displaying them with different details depending on the distance to the camera")
+Tab:AddParagraph("Frustum Culling","Technology that allows you to hide objects that are outside the camera to reduce the load on the processor. This is similar with Occlusion Culling")
