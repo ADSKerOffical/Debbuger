@@ -325,95 +325,6 @@ end))
    end    
 })
 
-Tab:AddButton({
- Name = "Find all ScreenGui",
- Callback = function()
- print("ScreenGui finder in game:")
-        for i, v in pairs(game.Workspace:GetDescendants()) do
-        if v:IsA("ScreenGui") then
-            print(v.Name)
-        end
-    end
-   end    
-})
-
-Tab:AddButton({
- Name = "Find all ImageLabel",
- Callback = function()
- print("ImageLabel finder in game:")
-        for i, v in pairs(game:GetDescendants()) do
-        if v:IsA("ImageLabel")  then
-            print("Label Name:", v.Name, ";ID:", v.Image, ";Parent:", v.Parent)
-        end
-    end
-   end    
-})
-
-Tab:AddButton({
- Name = "Find all SpecialMesh",
- Callback = function()
-        print("SpecialMesh finder in game:")
-for i, v in pairs(game:GetDescendants()) do
-        if v:IsA("SpecialMesh")  then
-            print("Mesh Parent:", v.Parent, ";Mesh:", v.MeshId, ";Texture:", v.TextureId)
-        end
-    end
-   end    
-})
-
-Tab:AddButton({
- Name = "Find all StateType",
- Callback = function()
-        local player = game.Players.LocalPlayer
-if player.Character and player.Character:FindFirstChildOfClass("Humanoid") then
-    local humanoid = player.Character:FindFirstChildOfClass("Humanoid")
-    print("Current states for", player.Name)
-    local states = humanoid:GetState()
-    for _, state in pairs(Enum.HumanoidStateType:GetEnumItems()) do
-        if humanoid:GetState(state) then
-            print("- " .. state.Name)
-        end
-    end
-else
-    print("Player does not have a character or humanoid")
-end
-   end    
-})
-
-Tab:AddButton({
- Name = "Find Sky Id",
- Callback = function()
-        print("Sky finder:")
-for i, v in pairs(game.Lighting:GetChildren()) do
-        if v:IsA("Sky")  then
-            print("Sky Name:", v.Name)
-   print("Sky Bk:", v.SkyboxBk)
-  print("Sky Dn:", v.SkyboxDn)
- print("Sky Ft:", v.SkyboxFt)
-print("Sky Lf:", v.SkyboxLf)
- print("Sky Rt:", v.SkyboxRt)
-  print("Sky Up:", v.SkyboxUp)
-        end
-    end
-   end    
-})
-
-Tab:AddButton({
- Name = "Find Lighting Options",
- Callback = function()
-        local lg = game.Lighting
- print("Lighting Options Finder:")
-print("Brightness:", lg.Brightness, ";Ambient:", lg.Ambient, ";ClockTime:", lg.ClockTime, ";Exposure Compensation:", lg.ExposureCompensation, ";Time of Day:", lg.TimeOfDay, ";Geographic Latitude:", lg.GeographicLatitude)
-   end    
-})
-
-Tab:AddButton({
- Name = "Model Info GUI",
- Callback = function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/ADSKerOffical/ModelInfoGUI/main/GUI"))()
-   end    
-})
-
 local Tab = Window:MakeTab({
 	Name = "Finders",
 	Icon = "rbxassetid://4483345998",
@@ -602,6 +513,95 @@ Tab:AddButton({
 end
 
 logAllInstances(workspace)
+   end    
+})
+
+Tab:AddButton({
+ Name = "Find all ScreenGui",
+ Callback = function()
+ print("ScreenGui finder in game:")
+        for i, v in pairs(game.Workspace:GetDescendants()) do
+        if v:IsA("ScreenGui") then
+            print(v.Name)
+        end
+    end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Find all ImageLabel",
+ Callback = function()
+ print("ImageLabel finder in game:")
+        for i, v in pairs(game:GetDescendants()) do
+        if v:IsA("ImageLabel")  then
+            print("Label Name:", v.Name, ";ID:", v.Image, ";Parent:", v.Parent)
+        end
+    end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Find all SpecialMesh",
+ Callback = function()
+        print("SpecialMesh finder in game:")
+for i, v in pairs(game:GetDescendants()) do
+        if v:IsA("SpecialMesh")  then
+            print("Mesh Parent:", v.Parent, ";Mesh:", v.MeshId, ";Texture:", v.TextureId)
+        end
+    end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Find all StateType",
+ Callback = function()
+        local player = game.Players.LocalPlayer
+if player.Character and player.Character:FindFirstChildOfClass("Humanoid") then
+    local humanoid = player.Character:FindFirstChildOfClass("Humanoid")
+    print("Current states for", player.Name)
+    local states = humanoid:GetState()
+    for _, state in pairs(Enum.HumanoidStateType:GetEnumItems()) do
+        if humanoid:GetState(state) then
+            print("- " .. state.Name)
+        end
+    end
+else
+    print("Player does not have a character or humanoid")
+end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Find Sky Id",
+ Callback = function()
+        print("Sky finder:")
+for i, v in pairs(game.Lighting:GetChildren()) do
+        if v:IsA("Sky")  then
+            print("Sky Name:", v.Name)
+   print("Sky Bk:", v.SkyboxBk)
+  print("Sky Dn:", v.SkyboxDn)
+ print("Sky Ft:", v.SkyboxFt)
+print("Sky Lf:", v.SkyboxLf)
+ print("Sky Rt:", v.SkyboxRt)
+  print("Sky Up:", v.SkyboxUp)
+        end
+    end
+   end    
+})
+
+Tab:AddButton({
+ Name = "Find Lighting Options",
+ Callback = function()
+        local lg = game.Lighting
+ print("Lighting Options Finder:")
+print("Brightness:", lg.Brightness, ";Ambient:", lg.Ambient, ";ClockTime:", lg.ClockTime, ";Exposure Compensation:", lg.ExposureCompensation, ";Time of Day:", lg.TimeOfDay, ";Geographic Latitude:", lg.GeographicLatitude)
+   end    
+})
+
+Tab:AddButton({
+ Name = "Model Info GUI",
+ Callback = function()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/ADSKerOffical/ModelInfoGUI/main/GUI"))()
    end    
 })
 
